@@ -1,0 +1,24 @@
+Title: Example Script with Formatting Rule Applied
+Author: (BE) Benedikt Eickhoff
+Draft date: 2024-02-20
+Contact: mail@benedikt-eickhoff.de
+
+# Synopsis
+
+This is an example screenplay demonstrating the application of a specific formatting rule to the script document. The rule requires the inclusion of initials for author and editor names.
+
+# Scene 1
+
+INT. LIVING ROOM - DAY
+
+[The living room is bathed in sunlight. A cat, WHISKERS, is napping on the windowsill.]
+
+WHISKERS
+(meows softly)
+
+# Revision History
+
+- **Editor**: (BE) Benedikt Eickhoff - Corrected typo in scene description.{{Slugline Document Settings
+Print Font: Courier Prime
+Paper Size: A4
+Note Color 8: TODO}}
