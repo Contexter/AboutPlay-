@@ -1,0 +1,12 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Core Scriptwriting Service",
+    "version": "1.0.0",
+    "description": "Handles the foundational elements of scriptwriting, including scene setup, dialogue creation, and narrative flow."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}

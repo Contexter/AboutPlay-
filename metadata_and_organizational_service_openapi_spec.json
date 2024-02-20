@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Metadata and Organizational Service",
+    "version": "1.0.0",
+    "description": "Manages screenplay metadata, cross-referencing between script elements, and extended notes for research."
+  },
+  "paths": {
+    "/metadata": {
+      "get": {
+        "summary": "Get metadata for scripts",
+        "responses": {
+          "200": {
+            "description": "Metadata list"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

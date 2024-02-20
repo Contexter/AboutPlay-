@@ -1,0 +1,12 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Supporting Elements Service",
+    "version": "1.0.0",
+    "description": "Addresses additional scriptwriting support elements, including notes, section headings, title pages, and revision tracking."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}

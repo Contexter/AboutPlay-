@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Playwright Information Service",
+    "version": "1.0.0",
+    "description": "Manages information related to playwrights, including profiles and associations with scripts."
+  },
+  "paths": {
+    "/playwrights": {
+      "get": {
+        "summary": "Get a list of playwrights",
+        "responses": {
+          "200": {
+            "description": "A list of playwrights"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
