@@ -1,0 +1,50 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Corrected MPS Proxy API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/metadata/{metadata_id}/": {
+      "patch": {
+        "operationId": "updateMetadataCorrected",
+        "parameters": [
+          {
+            "name": "metadata_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/scripts/{script_id}": {
+      "patch": {
+        "operationId": "updateScriptCorrected",
+        "parameters": [
+          {
+            "name": "script_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

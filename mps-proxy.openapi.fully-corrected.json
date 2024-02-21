@@ -1,0 +1,377 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MPS-Proxy FastAPI",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://mps-proxy.replit.app",
+      "description": "Metadata, Playwright, Script Microservice"
+    }
+  ],
+  "paths": {
+    "/playwrights/": {
+      "get": {
+        "summary": "Get all playwrights in a clear and factual manner.",
+        "operationId": "getAllPlaywrights",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Playwright"
+                  },
+                  "type": "array",
+                  "title": "Response Get All Playwrights Playwrights  Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create playwright in a clear and factual manner.",
+        "operationId": "createPlaywright",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Playwright"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Playwright"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata/": {
+      "get": {
+        "summary": "Get all metadata in a clear and factual manner.",
+        "operationId": "getAllMetadata",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Metadata"
+                  },
+                  "type": "array",
+                  "title": "Response Get All Metadata Metadata  Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create metadata in a clear and factual manner.",
+        "operationId": "createMetadata",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Metadata"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metadata"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata/{metadata_id}/": {
+    },
+    "/scripts/": {
+      "get": {
+        "summary": "Get all scripts in a clear and factual manner.",
+        "operationId": "getAllScripts",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ScriptModel"
+                  },
+                  "type": "array",
+                  "title": "Response Get All Scripts Scripts  Get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create script in a clear and factual manner.",
+        "operationId": "createScript",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScriptModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScriptModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scripts/{script_id}": {
+      "get": {
+        "summary": "Read script in a clear and factual manner.",
+        "operationId": "readScript",
+        "parameters": [
+          {
+            "name": "script_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Script Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScriptModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Metadata": {
+        "properties": {
+          "metadata_id": {
+            "type": "integer",
+            "title": "Metadata Id",
+            "description": "The ID of the metadata"
+          },
+          "creation_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Creation Date",
+            "description": "The creation date of the metadata"
+          },
+          "last_modified_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Last Modified Date",
+            "description": "The last modified date of the metadata"
+          },
+          "version_number": {
+            "type": "integer",
+            "title": "Version Number",
+            "description": "The version number of the metadata"
+          },
+          "additional_information": {
+            "type": "string",
+            "title": "Additional Information",
+            "description": "Additional information of the metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "metadata_id"
+        ],
+        "title": "Metadata"
+      },
+      "Playwright": {
+        "properties": {
+          "author_id": {
+            "type": "integer",
+            "title": "Author Id",
+            "description": "The ID of the playwright"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of the playwright"
+          },
+          "biography": {
+            "type": "string",
+            "title": "Biography",
+            "description": "The biography of the playwright"
+          },
+          "contact_information": {
+            "type": "string",
+            "title": "Contact Information",
+            "description": "The contact information of the playwright"
+          }
+        },
+        "type": "object",
+        "title": "Playwright"
+      },
+      "ScriptModel": {
+        "properties": {
+          "script_id": {
+            "type": "integer",
+            "title": "Script Id",
+            "description": "The ID of the script"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title of the script"
+          },
+          "author_id": {
+            "type": "integer",
+            "title": "Author Id",
+            "description": "The author's ID of the script"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+            "description": "The URL of the script"
+          },
+          "metadata_id": {
+            "type": "integer",
+            "title": "Metadata Id",
+            "description": "The metadata ID of the script"
+          }
+        },
+        "type": "object",
+        "required": [
+          "script_id",
+          "title"
+        ],
+        "title": "ScriptModel"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
