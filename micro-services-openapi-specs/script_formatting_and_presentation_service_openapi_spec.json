@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Script Formatting and Presentation Service",
+    "version": "1.0.0",
+    "description": "Focuses on the screenplay's visual layout and adherence to formatting standards, ensuring professional presentation."
+  },
+  "paths": {
+    "/scripts": {
+      "get": {
+        "summary": "Get a list of scripts",
+        "responses": {
+          "200": {
+            "description": "A list of scripts"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

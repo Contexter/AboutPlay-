@@ -1,0 +1,12 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Production Preparation Service",
+    "version": "1.0.0",
+    "description": "Supports production preparation with tools for casting, managing sound/music cues, and props listing."
+  },
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}
